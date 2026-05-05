@@ -4,6 +4,7 @@ import UnitMenu from './components/UnitMenu';
 import Quiz from './components/Quiz';
 import Flashcards from './components/Flashcards';
 import StudyGuide from './components/StudyGuide';
+import WrittenPrompt from './components/WrittenPrompt';
 import AchievementPopup from './components/AchievementPopup';
 import { useProgress } from './hooks/useProgress';
 import './App.css';
@@ -43,6 +44,11 @@ function App() {
     setView('guide');
   };
 
+  const handleStartWritten = (unitId) => {
+    setSelectedUnit(unitId);
+    setView('written');
+  };
+
   const handleQuizComplete = (unitId, correct, total) => {
     recordQuizResult(unitId, correct, total);
   };
@@ -52,7 +58,7 @@ function App() {
   };
 
   const handleBack = () => {
-    if (view === 'quiz' || view === 'flashcards' || view === 'guide') {
+    if (view === 'quiz' || view === 'flashcards' || view === 'guide' || view === 'written') {
       setView('unitMenu');
     } else {
       setView('dashboard');
@@ -82,6 +88,7 @@ function App() {
           onStartQuiz={handleStartQuiz}
           onStartFlashcards={handleStartFlashcards}
           onStartGuide={handleStartGuide}
+          onStartWritten={handleStartWritten}
           unitAccuracy={getUnitAccuracy(selectedUnit)}
         />
       )}
@@ -108,6 +115,13 @@ function App() {
           onBack={handleBack}
           onStartQuiz={handleStartQuiz}
           onStartFlashcards={handleStartFlashcards}
+        />
+      )}
+
+      {view === 'written' && (
+        <WrittenPrompt
+          unitId={selectedUnit}
+          onBack={handleBack}
         />
       )}
     </div>

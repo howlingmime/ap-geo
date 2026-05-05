@@ -1183,3 +1183,238 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* Written Prompt (FRQ) */
+.written-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.written-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.written-progress {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.written-prompt-card {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.written-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.written-prompt-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.written-textarea {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid #475569;
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  padding: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 220px;
+  transition: border-color 0.2s ease;
+}
+
+.written-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.written-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.word-count {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.written-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.written-actions .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.written-result {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin-top: 20px;
+  box-shadow: var(--shadow);
+}
+
+.written-score-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #475569;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.written-score-block {
+  text-align: center;
+}
+
+.written-score {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.written-score .score-divider {
+  color: var(--text-secondary);
+  margin: 0 4px;
+  font-weight: 400;
+}
+
+.written-percentage {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.written-feedback {
+  flex: 1;
+  min-width: 200px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.written-length-note {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--warning);
+}
+
+.rubric-section {
+  margin-bottom: 20px;
+}
+
+.rubric-section h4 {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.rubric-section.guidance p {
+  background: var(--bg-card);
+  padding: 14px 16px;
+  border-radius: 8px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.rubric-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rubric-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--bg-card);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.rubric-list.hits li {
+  border-left: 3px solid var(--success);
+}
+
+.rubric-list.misses li {
+  border-left: 3px solid var(--danger);
+}
+
+.rubric-mark {
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 1.2em;
+}
+
+.rubric-list.hits .rubric-mark {
+  color: var(--success);
+}
+
+.rubric-list.misses .rubric-mark {
+  color: var(--danger);
+}
+
+.rubric-empty {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.written-result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .written-score-row {
+    gap: 12px;
+  }
+  .written-score {
+    font-size: 2rem;
+  }
+  .written-result-actions {
+    justify-content: stretch;
+  }
+  .written-result-actions .btn {
+    flex: 1;
+  }
+}

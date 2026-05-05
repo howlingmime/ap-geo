@@ -1,6 +1,6 @@
 import { units } from '../data/units';
 
-function UnitMenu({ unitId, onBack, onStartQuiz, onStartFlashcards, onStartGuide, unitAccuracy }) {
+function UnitMenu({ unitId, onBack, onStartQuiz, onStartFlashcards, onStartGuide, onStartWritten, unitAccuracy }) {
   const unit = units.find(u => u.id === unitId);
 
   if (!unit) {
@@ -55,6 +55,15 @@ function UnitMenu({ unitId, onBack, onStartQuiz, onStartFlashcards, onStartGuide
           <div className="option-content">
             <h3>Study Guide</h3>
             <p>Review key topics and vocabulary</p>
+          </div>
+          <div className="option-arrow">→</div>
+        </div>
+
+        <div className="menu-option" onClick={() => onStartWritten(unitId)}>
+          <div className="option-icon">✍️</div>
+          <div className="option-content">
+            <h3>Written Prompt</h3>
+            <p>Practice an FRQ-style essay and get rubric-based feedback</p>
           </div>
           <div className="option-arrow">→</div>
         </div>
